@@ -1,0 +1,26 @@
+﻿@model List<WebBeerApp.Models.BeerRecipe>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+
+@using (Html.BeginForm())
+{
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Recipe Name</th>
+            <th>Recipe Style</th>
+        </tr>
+        @foreach (var beer in Model)
+        {
+            <tr>
+                <td>@beer.Name</td>
+                <td>@beer.StyleType.Name</td>
+            </tr>
+        }
+    </table>
+
+}

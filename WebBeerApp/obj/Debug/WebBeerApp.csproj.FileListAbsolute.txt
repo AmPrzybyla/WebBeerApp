@@ -130,3 +130,6 @@ c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.csproj.
 c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.csproj.CopyComplete
 c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.dll
 c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.pdb
+c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.Initial.resources
+c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.csproj.GenerateResource.cache
+c:\users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.SetNameOfStyle.resources

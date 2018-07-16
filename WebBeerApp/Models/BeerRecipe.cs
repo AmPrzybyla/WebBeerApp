@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebBeerApp.Models
 {
-    public class Hops
+    public class BeerRecipe
     {
         public int Id { get; set; }
 
@@ -14,12 +14,11 @@ namespace WebBeerApp.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Required]
-        public int Weight { get; set; }
+        [Display(Name = "Style")]
+        public int StyleTypeId { get; set; }
 
-        [Required]
-        public double AlfaAcid { get; set; }
+        public StyleType StyleType { get; set; }
 
-        public int TimeOfBoiling { get; set; }
+        public List<Hops> Hopses { get; set; }
     }
 }
