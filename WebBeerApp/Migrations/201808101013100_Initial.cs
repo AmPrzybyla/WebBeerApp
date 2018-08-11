@@ -12,18 +12,15 @@ namespace WebBeerApp.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false, maxLength: 255),
+                        Name = c.String(maxLength: 255),
                         Weight = c.Int(nullable: false),
                         AlfaAcid = c.Double(nullable: false),
                         TimeOfBoiling = c.Int(nullable: false),
-                        BeerRecipe_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.BeerRecipes", t => t.BeerRecipe_Id)
-                .Index(t => t.BeerRecipe_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.BeerRecipes",
+                "dbo.Beers",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -119,23 +116,21 @@ namespace WebBeerApp.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.BeerRecipes", "StyleTypeId", "dbo.StyleTypes");
-            DropForeignKey("dbo.Hops", "BeerRecipe_Id", "dbo.BeerRecipes");
+            DropForeignKey("dbo.Beers", "StyleTypeId", "dbo.StyleTypes");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.BeerRecipes", new[] { "StyleTypeId" });
-            DropIndex("dbo.Hops", new[] { "BeerRecipe_Id" });
+            DropIndex("dbo.Beers", new[] { "StyleTypeId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.StyleTypes");
-            DropTable("dbo.BeerRecipes");
+            DropTable("dbo.Beers");
             DropTable("dbo.Hops");
         }
     }

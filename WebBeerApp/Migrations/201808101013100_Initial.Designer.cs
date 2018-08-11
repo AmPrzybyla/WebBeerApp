@@ -13,7 +13,7 @@ namespace WebBeerApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201807161828294_Initial"; }
+            get { return "201808101013100_Initial"; }
         }
         
         string IMigrationMetadata.Source

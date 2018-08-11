@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebBeerApp.Models
 {
-    public class BeerRecipe
+    public class Beer
     {
         public int Id { get; set; }
 
@@ -19,6 +19,8 @@ namespace WebBeerApp.Models
 
         public StyleType StyleType { get; set; }
 
-        public List<Hops> Hopses { get; set; }
+
+       
+       
     }
 }

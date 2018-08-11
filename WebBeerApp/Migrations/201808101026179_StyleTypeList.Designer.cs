@@ -7,13 +7,13 @@ namespace WebBeerApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class SetNameOfStyle : IMigrationMetadata
+    public sealed partial class StyleTypeList : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SetNameOfStyle));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(StyleTypeList));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807161833294_SetNameOfStyle"; }
+            get { return "201808101026179_StyleTypeList"; }
         }
         
         string IMigrationMetadata.Source

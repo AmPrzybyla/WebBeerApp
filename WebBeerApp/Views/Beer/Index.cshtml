@@ -1,26 +1,52 @@
-﻿@model List<WebBeerApp.Models.BeerRecipe>
+﻿@model List<WebBeerApp.Models.Beer>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>View</h2>
+<h2>Beers List</h2>
 
 
-@using (Html.BeginForm())
-{
-    <table class="table table-bordered table-hover">
+<table id="beers" class="table table-bordered table-hover">
+    <thead>
         <tr>
-            <th>Recipe Name</th>
-            <th>Recipe Style</th>
+            <th>Beer</th>
+            <th>Style</th>
         </tr>
-        @foreach (var beer in Model)
+    </thead>
+    <tbody>
+        @*@foreach (var beer in Model)
         {
             <tr>
                 <td>@beer.Name</td>
                 <td>@beer.StyleType.Name</td>
             </tr>
-        }
-    </table>
+        }*@
+    </tbody>
+</table>
 
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#beers").DataTable({
+                ajax: {
+                    url: "/api/beer",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "name",
+                        
+                    },
+                    {
+                        data: "styleType.name"
+                    }
+                ]
+            });
+
+        });
+    </script>
 }

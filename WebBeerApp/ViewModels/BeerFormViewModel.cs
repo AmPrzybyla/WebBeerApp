@@ -6,11 +6,9 @@ using WebBeerApp.Models;
 
 namespace WebBeerApp.ViewModels
 {
-    public class RecipeFormViewModel
+    public class BeerFormViewModel
     {
         public IEnumerable<StyleType> StyleTypes { get; set; }
-        public BeerRecipe BeerRecipe { get; set; }
-        public List<Hops> Hops { get; set; }
-
+        public Beer Beer { get; set; }
     }
 }
