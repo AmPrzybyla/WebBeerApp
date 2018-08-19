@@ -18,8 +18,6 @@ namespace WebBeerApp.Models
         public int StyleTypeId { get; set; }
 
         public StyleType StyleType { get; set; }
-
-
        
        
     }

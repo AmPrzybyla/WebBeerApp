@@ -43,5 +43,86 @@ namespace WebBeerApp.Controllers
             };
             return View("BeerForm", viewModel);
         }
+
+
+        [HttpPost]
+        public ActionResult Save(Beer beer)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new BeerFormViewModel
+                {
+                    Beer = beer,
+                    StyleTypes = _context.StyleTypes.ToList()
+                };
+                return View("BeerForm", viewModel);
+            }
+
+            _context.Beer.Add(beer); 
+            _context.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+
+
+        [HttpPost]
+        public ActionResult SaveHop (Hops hop)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new AddHopViewModel();
+                return View("BeerForm", viewModel);
+            }
+
+
+            _context.Hopses.Add(hop);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            var beer = _context.Beer.Include(b => b.StyleType).SingleOrDefault(b => b.Id == id);
+
+            if (beer == null)
+                return HttpNotFound();
+
+            var recipe = _context.Hopses.Where(r => r.BeerId == id).ToList();
+
+            var viewModel = new RecipeViewModel
+            {
+                Beer=beer,
+                Hops=recipe,
+                StyleTypes=_context.StyleTypes.ToList()
+            };
+            
+
+            return View(viewModel);
+        }
+
+
+        public ActionResult AddHop(int id)
+        {
+
+            var beer = _context.Beer.SingleOrDefault(b => b.Id == id);
+
+            if (!_context.Beer.Any(b => b.Id == id))
+            {
+                return HttpNotFound();
+
+            }
+
+            var viewModel = new AddHopViewModel
+            {
+                Beer=beer
+            };
+
+
+
+            return View(viewModel);
+        }
     }
 }

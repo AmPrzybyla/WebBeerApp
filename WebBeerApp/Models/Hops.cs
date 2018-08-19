@@ -10,8 +10,7 @@ namespace WebBeerApp.Models
     {
 
         public int Id { get; set; }
-
-        
+ 
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -22,5 +21,7 @@ namespace WebBeerApp.Models
         public double AlfaAcid { get; set; }
 
         public int TimeOfBoiling { get; set; }
+
+        public int BeerId { get; set; }
     }
 }

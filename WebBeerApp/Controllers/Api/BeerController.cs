@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebBeerApp.Models;
+using WebBeerApp.Dtos;
+using AutoMapper;
 
 namespace WebBeerApp.Controllers.Api
 {
@@ -19,12 +21,25 @@ namespace WebBeerApp.Controllers.Api
         }
 
         //GET /api/beer
-
         public IHttpActionResult GetBeers()
         {
-            var beer = _context.Recipes.Include(b=>b.StyleType).ToList();
-            Console.WriteLine("Jestem");
-            return Ok(beer);
+            var beerDtos = _context.Beer.Include(b => b.StyleType).ToList().Select(Mapper.Map<Beer, BeerDto>);
+            return Ok(beerDtos);
+
+            //return _context.Beer.ToList();
+
+        }
+
+
+        public IHttpActionResult GetBeer(int id)
+        {
+            var beer = _context.Beer.SingleOrDefault(b => b.Id == id);
+
+            if (!ModelState.IsValid)
+                return NotFound();
+
+
+            return Ok(Mapper.Map<Beer, BeerDto>(beer));
         }
 
     }

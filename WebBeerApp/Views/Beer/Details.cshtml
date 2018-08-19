@@ -1,0 +1,25 @@
+﻿@model WebBeerApp.ViewModels.RecipeViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+<h3>General:</h3>
+<ul>
+    <li>Name: @Model.Beer.Name</li>
+    <li>Style: @Model.Beer.StyleType.Name</li>
+</ul>
+
+
+<h3>Hops</h3>
+@foreach (var hops in Model.Hops)
+{
+    <ul>
+        <li>Name: @hops.Name</li>
+        <li>Alfa Acid: @hops.AlfaAcid</li>
+        <li>Weight: @hops.Weight</li>
+        <li>Time Of Boiling: @hops.TimeOfBoiling</li>
+
+    </ul>
+}

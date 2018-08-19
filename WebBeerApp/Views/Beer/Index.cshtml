@@ -38,11 +38,14 @@
                 },
                 columns: [
                     {
-                        data: "name",
+                        data: "Name",
+                        render: function (data, type, beer) {
+                            return "<a href='/beer/details/" + beer.Id + "'>" + beer.Name +"</a>" 
+                        }
                         
                     },
                     {
-                        data: "styleType.name"
+                        data: "StyleType.Name"
                     }
                 ]
             });

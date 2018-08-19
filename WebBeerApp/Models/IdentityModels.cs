@@ -21,9 +21,10 @@ namespace WebBeerApp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
-        public DbSet<Beer> Recipes { get; set; }
+        public DbSet<Beer> Beer { get; set; }
         public DbSet<Hops> Hopses { get; set; }
         public DbSet<StyleType> StyleTypes { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
 
 
         public ApplicationDbContext()

@@ -139,3 +139,9 @@ C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\bin\System.Web.Http.WebHost.
 C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\bin\System.Net.Http.Formatting.xml
 C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\bin\System.Web.Http.xml
 C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\bin\System.Web.Http.WebHost.xml
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\bin\AutoMapper.dll
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\bin\AutoMapper.xml
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddHopsColumnToBeerTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.DeleteHopsColumnFromBeerTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddRecipesTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddBeerIdColumnToHopsTable.resources
