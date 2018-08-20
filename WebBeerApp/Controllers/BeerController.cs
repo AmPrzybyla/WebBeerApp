@@ -67,7 +67,7 @@ namespace WebBeerApp.Controllers
 
 
         [HttpPost]
-        public ActionResult SaveHop (Hops hop)
+        public ActionResult SaveHop (Hop hop)
         {
             if (!ModelState.IsValid)
             {
@@ -75,8 +75,17 @@ namespace WebBeerApp.Controllers
                 return View("BeerForm", viewModel);
             }
 
-
+            if(hop.Id==0)
             _context.Hopses.Add(hop);
+
+            else
+            {
+                var hopInDb = _context.Hopses.Single(h => h.Id == hop.Id);
+                hopInDb.Name = hop.Name;
+                hopInDb.TimeOfBoiling = hop.TimeOfBoiling;
+                hopInDb.Weight = hop.Weight;
+                hopInDb.AlfaAcid = hop.AlfaAcid;
+            }
             _context.SaveChanges();
 
 
@@ -104,6 +113,8 @@ namespace WebBeerApp.Controllers
         }
 
 
+
+
         public ActionResult AddHop(int id)
         {
 
@@ -120,6 +131,23 @@ namespace WebBeerApp.Controllers
                 Beer=beer
             };
 
+
+            return View(viewModel);
+        }
+
+
+        public ActionResult EditHop(int id)
+        {
+            var hop = _context.Hopses.SingleOrDefault(h => h.Id == id);
+            
+            if (hop == null)
+                return HttpNotFound();
+            var beer = _context.Beer.Single(b => b.Id == hop.BeerId);
+
+            var viewModel = new AddHopViewModel(hop)
+            {
+                Beer = beer
+            };
 
 
             return View(viewModel);

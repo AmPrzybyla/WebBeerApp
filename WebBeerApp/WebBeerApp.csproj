@@ -212,11 +212,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\BeerController.cs" />
+    <Compile Include="Controllers\Api\HopController.cs" />
     <Compile Include="Controllers\BeerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="Dtos\BeerDto.cs" />
+    <Compile Include="Dtos\HopDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -244,9 +246,25 @@
     <Compile Include="Migrations\201808191118454_AddBeerIdColumnToHopsTable.Designer.cs">
       <DependentUpon>201808191118454_AddBeerIdColumnToHopsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808201650037_AddHopsListToBeerTable.cs" />
+    <Compile Include="Migrations\201808201650037_AddHopsListToBeerTable.Designer.cs">
+      <DependentUpon>201808201650037_AddHopsListToBeerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808201711431_AddHopsIdListToBeerTable.cs" />
+    <Compile Include="Migrations\201808201711431_AddHopsIdListToBeerTable.Designer.cs">
+      <DependentUpon>201808201711431_AddHopsIdListToBeerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808201725111_DeleteHopsListToBeerTable.cs" />
+    <Compile Include="Migrations\201808201725111_DeleteHopsListToBeerTable.Designer.cs">
+      <DependentUpon>201808201725111_DeleteHopsListToBeerTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808201728058_AddHopsListToBeerTable1.cs" />
+    <Compile Include="Migrations\201808201728058_AddHopsListToBeerTable1.Designer.cs">
+      <DependentUpon>201808201728058_AddHopsListToBeerTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Hops.cs" />
+    <Compile Include="Models\Hop.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Beer.cs" />
@@ -497,6 +515,7 @@
     <Content Include="Views\Beer\BeerForm.cshtml" />
     <Content Include="Views\Beer\Details.cshtml" />
     <Content Include="Views\Beer\AddHop.cshtml" />
+    <Content Include="Views\Beer\EditHop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -533,6 +552,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808191118454_AddBeerIdColumnToHopsTable.resx">
       <DependentUpon>201808191118454_AddBeerIdColumnToHopsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201650037_AddHopsListToBeerTable.resx">
+      <DependentUpon>201808201650037_AddHopsListToBeerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201711431_AddHopsIdListToBeerTable.resx">
+      <DependentUpon>201808201711431_AddHopsIdListToBeerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201725111_DeleteHopsListToBeerTable.resx">
+      <DependentUpon>201808201725111_DeleteHopsListToBeerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201728058_AddHopsListToBeerTable1.resx">
+      <DependentUpon>201808201728058_AddHopsListToBeerTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

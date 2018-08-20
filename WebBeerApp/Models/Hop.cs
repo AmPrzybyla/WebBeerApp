@@ -6,23 +6,22 @@ using System.Web;
 
 namespace WebBeerApp.Models
 {
-    public class Beer
+    public class Hop
     {
-        public int Id { get; set; }
 
-        [Required]
+        public int Id { get; set; }
+ 
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Display(Name = "Style")]
-        public int StyleTypeId { get; set; }
-
-        public StyleType StyleType { get; set; }
-
-        public ICollection<Hop> Hops { get; set; }
+     
+        public int Weight { get; set; }
 
         
+        public double AlfaAcid { get; set; }
 
+        public int TimeOfBoiling { get; set; }
 
+        public int BeerId { get; set; }
     }
 }

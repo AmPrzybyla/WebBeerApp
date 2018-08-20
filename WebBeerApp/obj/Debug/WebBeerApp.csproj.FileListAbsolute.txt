@@ -145,3 +145,7 @@ C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrati
 C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.DeleteHopsColumnFromBeerTable.resources
 C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddRecipesTable.resources
 C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddBeerIdColumnToHopsTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddHopsListToBeerTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddHopsIdListToBeerTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.DeleteHopsListToBeerTable.resources
+C:\Users\klaptop\source\repos\WebBeerApp\WebBeerApp\obj\Debug\WebBeerApp.Migrations.AddHopsListToBeerTable1.resources

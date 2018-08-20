@@ -23,8 +23,16 @@ namespace WebBeerApp.Controllers.Api
         //GET /api/beer
         public IHttpActionResult GetBeers()
         {
-            var beerDtos = _context.Beer.Include(b => b.StyleType).ToList().Select(Mapper.Map<Beer, BeerDto>);
-            return Ok(beerDtos);
+            var beer = _context.Beer.GroupJoin(_context.Hopses, b => b.Id, h => h.BeerId,(ber, hop)=>new BeerDto {
+                Hops =hop.ToList(),
+                Name =ber.Name,
+                Id=ber.Id,
+                StyleType=ber.StyleType,
+                StyleTypeId=ber.StyleTypeId
+            });
+            //var beerDtos = _context.Beer.Include(b => b.StyleType).ToList().Select(Mapper.Map<Beer, BeerDto>);
+           
+            return Ok(beer);
 
             //return _context.Beer.ToList();
 
@@ -33,14 +41,39 @@ namespace WebBeerApp.Controllers.Api
 
         public IHttpActionResult GetBeer(int id)
         {
-            var beer = _context.Beer.SingleOrDefault(b => b.Id == id);
-
+            var beer = _context.Beer.GroupJoin(_context.Hopses, b => b.Id, h => h.BeerId, (ber, hop) => new BeerDto
+            {
+                Hops = hop.ToList(),
+                Name = ber.Name,
+                Id = ber.Id,
+                StyleType = ber.StyleType,
+                StyleTypeId = ber.StyleTypeId
+            }).SingleOrDefault(b=>b.Id==id);
+          //  var beer = _context.Beer.SingleOrDefault(b => b.Id == id);
+            
             if (!ModelState.IsValid)
                 return NotFound();
 
 
-            return Ok(Mapper.Map<Beer, BeerDto>(beer));
+            return Ok(beer);
         }
 
+        [HttpDelete]
+        public IHttpActionResult DeleteBeer(int id)
+        {
+            var hopsInDb = _context.Hopses.Where(h => h.BeerId == id).ToList();
+            foreach (var hop in hopsInDb)
+            {
+                _context.Hopses.Remove(hop);
+            }
+
+            var beerInDb = _context.Beer.SingleOrDefault(b => b.Id == id);
+            if (beerInDb == null)
+                return NotFound();
+
+            _context.Beer.Remove(beerInDb);
+            _context.SaveChanges();
+            return Ok();
+        }
     }
 }

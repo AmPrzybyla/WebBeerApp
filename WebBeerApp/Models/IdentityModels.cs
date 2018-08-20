@@ -22,7 +22,7 @@ namespace WebBeerApp.Models
     {
 
         public DbSet<Beer> Beer { get; set; }
-        public DbSet<Hops> Hopses { get; set; }
+        public DbSet<Hop> Hopses { get; set; }
         public DbSet<StyleType> StyleTypes { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
 

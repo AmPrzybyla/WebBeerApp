@@ -13,9 +13,13 @@ namespace WebBeerApp.App_Start
         public MappingProfile()
         {
             Mapper.CreateMap<Beer, BeerDto>();
+            Mapper.CreateMap<Hop, HopDto>();
+
 
             Mapper.CreateMap<BeerDto, Beer>()
                 .ForMember(b => b.Id, opt => opt.Ignore());
+            Mapper.CreateMap<HopDto, Hop>()
+                .ForMember(h => h.Id, opt => opt.Ignore());
         }
     }
 }

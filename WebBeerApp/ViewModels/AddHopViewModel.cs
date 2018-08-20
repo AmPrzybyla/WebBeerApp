@@ -11,6 +11,7 @@ namespace WebBeerApp.ViewModels
     {
 
         public Beer Beer { get; set; }
+        //public Hops Hops { get; set; }
 
         public int Id { get; set; }
 
@@ -27,6 +28,20 @@ namespace WebBeerApp.ViewModels
 
         public int BeerId { get; set; }
 
+        public AddHopViewModel()
+        {
+            Id = 0;
+        }
+
+        public AddHopViewModel(Hop hop)
+        {
+            Id = hop.Id;
+            Name = hop.Name;
+            Weight = hop.Weight;
+            AlfaAcid = hop.AlfaAcid;
+            TimeOfBoiling = hop.TimeOfBoiling;
+            BeerId = hop.BeerId;
+        }
     }
 
 }

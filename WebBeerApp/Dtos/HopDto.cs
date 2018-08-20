@@ -4,20 +4,19 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace WebBeerApp.Models
+namespace WebBeerApp.Dtos
 {
-    public class Hops
+    public class HopDto
     {
-
         public int Id { get; set; }
- 
+
         [StringLength(255)]
         public string Name { get; set; }
 
-     
+
         public int Weight { get; set; }
 
-        
+
         public double AlfaAcid { get; set; }
 
         public int TimeOfBoiling { get; set; }

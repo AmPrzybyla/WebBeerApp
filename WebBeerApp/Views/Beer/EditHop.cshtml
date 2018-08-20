@@ -1,0 +1,41 @@
+﻿@model WebBeerApp.ViewModels.AddHopViewModel
+@{
+    ViewBag.Title = "AddHop";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddHop</h2>
+<h3>@Model.Beer.Name</h3>
+
+@using (Html.BeginForm("SaveHop", "Beer"))
+{
+
+
+    @Html.ValidationSummary();
+    <div class="form-group">
+        @Html.LabelFor(h=>h.Name)
+        @Html.TextBoxFor(h => h.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(h => h.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(h => h.AlfaAcid)
+        @Html.TextBoxFor(h=>h.AlfaAcid, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(h => h.TimeOfBoiling)
+        @Html.TextBoxFor(h=>h.TimeOfBoiling, new { @class = "form-control" })
+    </div>
+<div class="form-group">
+        @Html.LabelFor(h => h.Weight)
+        @Html.TextBoxFor(h=>h.Weight, new { @class = "form-control" })
+    </div>
+    
+    @Html.HiddenFor(h=>h.BeerId)
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

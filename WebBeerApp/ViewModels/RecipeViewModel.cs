@@ -10,6 +10,6 @@ namespace WebBeerApp.ViewModels
     {
         public IEnumerable<StyleType> StyleTypes { get; set; }
         public Beer Beer { get; set; }
-        public ICollection<Hops> Hops { get; set; }
+        public ICollection<Hop> Hops { get; set; }
     }
 }

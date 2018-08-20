@@ -9,6 +9,6 @@ namespace WebBeerApp.Models
     {
         public int Id { get; set; }
         public Beer Beer { get; set; }
-        public ICollection<Hops> Hops { get; set; }
+        public ICollection<Hop> Hops { get; set; }
     }
 }
